@@ -32,6 +32,4 @@ int main()
     sum *= deltaX / 2;
 
     printf("The Riemann's Sum is: %d\n", sum);
-    return 0;
 }
-
