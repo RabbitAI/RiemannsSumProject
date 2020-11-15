@@ -8,30 +8,31 @@
 
 int main()
 {
-    int y, sum = 0;
-    int a = 0;   //start
-    int b = 100; //end
-    int n = 100; //number of intervals
-    float deltaX = (b - a) / n;
+    float y;
+    float a = 0;   //start
+    float b = 100; //end
+    float n = 1024; //number of intervals
+    float deltaX = (b - a) / n, sum = 0;
 
-    for (int i = 0; i <= n; i++)
-    {
-        if (i == 0 || i == 100)
-        {
-           y = i + 3;
+    for (float i = 0; i < n; i++)
+    {   if (i == 0)
+        {  y = (a * a) + (a * 3) + 3;
            sum += y;
         }
-        else
-        {
-            
-            y = 2 * (i + 3);
+        else if (i == n-1)
+        {   y = (b * b) + (b * 3) + 3;
             sum += y;
         }
+        else
+        {   float x = (a + i) * deltaX;
+            y = 2 * ((x * x) + (x * 3) + 3);
+            sum += y;
+        } 
     }
 
-    sum *= deltaX / 2;
+    sum = (deltaX / 2) * sum;
 
-    printf("The Riemann's Sum is: %d\n", sum);
+    printf("The Riemann's Sum is: %f\n", sum);
+
     return 0;
 }
-
