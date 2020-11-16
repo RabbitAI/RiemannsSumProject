@@ -15,7 +15,7 @@ int main()
     float y;
     float a = 0;   //start
     float b = 100; //end
-    float n = 1024; //number of intervals
+    float n = 10240; //number of intervals
     float deltaX = (b - a) / n, sum = 0;
 
     GET_TIME(start);
@@ -40,6 +40,6 @@ int main()
 
     printf("The Riemann's Sum is: %f\n", sum);
     printf("The code to be timed took %e seconds\n", elapsed);
-    
+
     return 0;
 }

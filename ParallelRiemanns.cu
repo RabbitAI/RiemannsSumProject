@@ -9,7 +9,7 @@
 #include <cuda.h>
 #include <cuda_runtime.h>
 
-#define NUMBER_OF_THREADS 1024
+#define NUMBER_OF_THREADS 10240
 
 // CUDA kernel
 __global__ void findArea(float *n, float a, float b)
@@ -47,8 +47,8 @@ int main()
     cudaMalloc((void**)&n_dev, size);
     cudaMemcpy(n_dev, n, size, cudaMemcpyHostToDevice);
 
-    dim3 GridDim(1,1);
-    dim3 BlockDim(NUMBER_OF_THREADS,1);
+    dim3 GridDim(10,1);
+    dim3 BlockDim(1024,1);
 
     GET_TIME(start);
     //call kernel 
@@ -73,6 +73,3 @@ int main()
     return 0;
 }
 
-//shared memory will be deltaX
-//pass in array = #threads for holding y values
-//AVOID HEADACHE
