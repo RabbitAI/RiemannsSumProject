@@ -36,4 +36,4 @@ nvcc ParallelRiemanns.cu -o PRS.out
 #============================
 # LAUNCH YOUR EXECUTABLE
 # Launch the executable named "a.out"
-./a.out
+./PRS.out

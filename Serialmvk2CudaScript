@@ -31,9 +31,9 @@ module load cuda/10.1   #EC updated 02/10/2020
 # -o is a compilation flag
 # a.out is the name of your executable
 
-nvcc SerialRiemanns.cu -o a.out
+nvcc SerialRiemanns.cu -o SRS.out
 
 #============================
 # LAUNCH YOUR EXECUTABLE
 # Launch the executable named "a.out"
-./a.out
+./SRS.out
